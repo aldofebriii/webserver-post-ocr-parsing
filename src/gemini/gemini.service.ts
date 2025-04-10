@@ -53,7 +53,7 @@ export class GeminiService {
             const textInput = this.wordsPrompt(words);
             const startTime = new Date().getTime();
             const geminiRes = await fetch(
-                'https://generativelanguage.googleapis.com/v1beta/tunedModels/geminifinetuningdatasetsv2-jn2dqekxagvx:generateContent?key=AIzaSyDiokcGFq9RfN-Eeyuv5icRn7Q-YHmBsFg',
+                `https://generativelanguage.googleapis.com/v1beta/tunedModels/geminifinetuningdatasetsv2-jn2dqekxagvx:generateContent?key=${process.env.GEMINI_API_KEY}`,
                 {
                     method: 'POST',
                     body: JSON.stringify({
